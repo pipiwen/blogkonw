@@ -1,0 +1,64 @@
+logging:
+  config: logback-spring.xml
+  path: E:\\blogknow_logs
+  level:
+    root: debug
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/datatest1?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    drive-class-name: com.mysql.cj.jdbc.Driver
+    http:
+      encoding:
+        charset: UTF-8
+        force: true
+  resources:  #静态资源
+    static-locations:
+    - classpath:/resources/
+    - classpath:/static/
+  mvc:
+    static-path-pattern:
+    - classpath:/static/**
+    - classpath:/resources/**
+    view:
+      prefix: /views/
+      suffix: .html
+
+mybatis-plus::
+  type-aliases-package: com.ppw.blogknow.entity
+  mapper-locations: classpath:mapper/*Mapper.xml
+  #项目启动会检查xml配置存在(只在开发时候打开)
+  check-config-location: true
+  #SIMPLE：该执行器类型不做特殊的事情，为每个语句的执行创建一个新的预处理语句,REUSE：该执行器类型会复用预处理语句,BATCH：该执行器类型会批量执行所有的更新语句
+  default-executor-type: REUSE
+  configuration:
+    # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+    map-underscore-to-camel-case: true
+    # 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存，默认为 true
+    cache-enabled: false
+    #懒加载
+    #aggressive-lazy-loading: true
+    #NONE：不启用自动映射 PARTIAL：只对非嵌套的 resultMap 进行自动映射 FULL：对所有的 resultMap 都进行自动映射
+    #auto-mapping-behavior: partial
+    #NONE：不做任何处理 (默认值)WARNING：以日志的形式打印相关警告信息 FAILING：当作映射失败处理，并抛出异常和详细信息
+    #auto-mapping-unknown-column-behavior: none
+    #如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      #表名下划线命名默认true
+      table-underline: true
+      #id类型
+      id-type: auto
+      #是否开启大写命名，默认不开启
+      #capital-mode: false
+      #逻辑已删除值,(逻辑删除下有效) 需要注入逻辑策略LogicSqlInjector 以@Bean方式注入
+      logic-not-delete-value: 0
+      #逻辑未删除值,(逻辑删除下有效)
+      logic-delete-value: 1
+      #数据库类型
+      db-type: mysql

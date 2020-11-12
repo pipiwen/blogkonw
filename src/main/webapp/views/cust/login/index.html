@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/base.css">
+    <title>login登录页</title>
+    <script src="/resources/js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="t_container">
+        <div id="mydiv" style="height:500px;padding:0;margin:0;position: absolute;z-index:1;"></div>
+        <main class="t_main">
+            <ul>
+                <li class="t_titles">欢迎登录</li>
+                <li>
+                    <input class="user" type="text" placeholder="请输入您的用户名">
+                </li>
+                <li>
+                    <input type="text" placeholder="请输入您的密码">
+                </li>
+                <li class="t_checkbox">
+                    <i></i>
+                    <span>记住账号</span>
+                </li>
+                <li>
+                    <button class="t_btn">登 录</button>
+                </li>
+            </ul>
+        </main>
+    </div>
+    <script>
+		window.onload = function() {
+		    //配置
+		    var config = {
+		        vx: 4,	//小球x轴速度,正为右，负为左
+		        vy: 4,	//小球y轴速度
+		        height: 2,	//小球高宽，其实为正方形，所以不宜太大
+		        width: 2,
+		        count: 100,		//点个数
+		        color: "121, 162, 185", 	//点颜色
+		        stroke: "220,255,255", 		//线条颜色
+		        dist: 6000, 	//点吸附距离
+		        e_dist: 20000, 	//鼠标吸附加速距离
+		        max_conn: 50 	//点到点最大连接数
+		    }
+
+		    //调用
+		    CanvasParticle(config);
+		}
+	</script>
+	<script type="text/javascript" src="js/canvas.js"></script>
+</body>
+</html>
