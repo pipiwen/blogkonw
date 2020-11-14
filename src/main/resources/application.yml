@@ -10,6 +10,12 @@ spring:
     username: root
     password: 123456
     drive-class-name: com.mysql.cj.jdbc.Driver
+    #http://localhost:port/你的项目跟路径/druid/login.ftlh
+    druid:
+      filters:
+      - stat
+      - wall
+      - logback
     http:
       encoding:
         charset: UTF-8
@@ -24,9 +30,31 @@ spring:
     - classpath:/resources/**
     view:
       prefix: /views/
-      suffix: .html
+      suffix: .ftlh
+  freemarker:
+    allow-request-override: false
+    cache: false
+    check-template-location: true
+    charset: UTF-8
+#    prefix: /views/
+#    suffix: .jtl
+    templateEncoding: UTF-8
+    templateLoaderPath: classpath:/views/
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    prefer-file-system-access: true
+    request-context-attribute: ctx
 
-mybatis-plus::
+
+#  thymeleaf:
+#    cache: false #关闭缓存
+#    mode: HTML #设置模板类型
+#    encoding: utf-8  #设置编码
+#    prefix: classpath:/views/
+#    suffix: .html
+mybatis-plus:
   type-aliases-package: com.ppw.blogknow.entity
   mapper-locations: classpath:mapper/*Mapper.xml
   #项目启动会检查xml配置存在(只在开发时候打开)
@@ -56,9 +84,7 @@ mybatis-plus::
       id-type: auto
       #是否开启大写命名，默认不开启
       #capital-mode: false
-      #逻辑已删除值,(逻辑删除下有效) 需要注入逻辑策略LogicSqlInjector 以@Bean方式注入
       logic-not-delete-value: 0
-      #逻辑未删除值,(逻辑删除下有效)
       logic-delete-value: 1
       #数据库类型
       db-type: mysql

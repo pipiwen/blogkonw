@@ -1,5 +1,6 @@
 package com.ppw.blogknow.controller;
 
+import com.ppw.blogknow.dao.UserMapper;
 import com.ppw.blogknow.entity.Cust;
 import com.ppw.blogknow.service.TestService;
 import org.slf4j.Logger;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,6 +32,8 @@ public class TestController {
     @Autowired
     @Qualifier("testServiceImpl")
     private TestService testService;
+    @Autowired
+    private UserMapper userMapper;
 
     //测试新建的web工程采用boot项目采用外置tomcat
     @GetMapping(value = "/hello")
@@ -98,7 +102,20 @@ public class TestController {
      **/
     @RequestMapping(value = "/index")
     public String indexPage() {
-        return "cust/login/index";
+        String s = "111";
+        return "login";
+    }
+
+    @RequestMapping("/logicDelete")
+    public void testLogicDelete() {
+
+        int i = userMapper.deleteById(2);
+        logger.debug("LogicDelete num is : {}", i);
+    }
+    @RequestMapping(value = "/test1111")
+    public String test1111(Model model) {
+        model.addAttribute("testInfo","hello syw");
+        return "cust/login/testFreemarker";
     }
 
 }
