@@ -6,9 +6,6 @@ import com.ppw.blogknow.service.SysUserService;
 import com.ppw.blogknow.util.CollectionUtil;
 import com.ppw.blogknow.util.MD5Encrypt;
 import com.ppw.blogknow.util.UUIDUtil;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,14 +62,10 @@ public class LoginController {
     public String loginIn(SysUser user) {
         try {
             if (null == user) {
-                throw  new BaseBusinessException(1001, "user为空");
+                throw new BaseBusinessException(1001, "user为空");
             }
-            //获取shiro门面
-            Subject subject = SecurityUtils.getSubject();
-            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),user.getPassword());
-            //执行认证会跳转doGetAuthenticationInfo()方法
-            subject.login(token);
-            sysUserService.updateLoginTime();
+            sysUserService.loginIn(user);
+
             return "success";
         } catch (Exception e) {
 

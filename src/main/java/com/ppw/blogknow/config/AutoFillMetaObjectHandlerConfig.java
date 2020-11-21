@@ -1,7 +1,6 @@
 package com.ppw.blogknow.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.ppw.blogknow.controller.TestController;
 import com.ppw.blogknow.util.DateUtil;
 import org.apache.ibatis.reflection.MetaObject;
 import org.slf4j.Logger;
