@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="/resources/css/base.css">
     <title>login登录页</title>
     <script src="${ctx.contextPath}/resources/js/jquery.min.js"></script>
+    <script src="${ctx.contextPath}/resources/js/canvas.js"></script>
 </head>
+
 <body>
     <div class="t_container">
         <div id="mydiv" style="height:500px;padding:0;margin:0;position: absolute;z-index:1;"></div>
@@ -19,18 +21,21 @@
                 <li>
                     <input type="text" name="pwd" placeholder="请输入您的密码">
                 </li>
+                <li id="tipMsg">
+
+                </li>
                 <input class="t_checkbox" type="checkbox" name="rememberMe">记住账号
                 <!--<li class="t_checkbox">
                     <i></i>
                     <span>记住账号</span>
                 </li>-->
                 <li>
-                    <button class="t_btn" onclick="onsubmit()">登 录</button>
+                    <button class="t_btn" onclick="onsubmit11()">登 录</button>
                 </li>
             </ul>
         </main>
     </div>
-    <script>
+    <script type="text/javascript">
 		window.onload = function() {
 		    //配置
 		    var config = {
@@ -48,37 +53,40 @@
 
 		    //调用
 		    CanvasParticle(config);
-		}
+		};
 	</script>
-	<script type="text/javascript" src="js/canvas.js"></script>
+
     <script type="text/javascript">
-        function onsubmit() {
+        function onsubmit11() {
             var userName = $("input[name='userName']").val();
             var pwd = $("input[name='pwd']").val();
+            var pwdReg = /^(\w){6,20}$/;
+            if (!$.trim(userName) && !$.trim(pwd)) {
+                $("#tipMsg").html("用户名密码不为空");
+                return false;
+            }
+            if (!pwdReg.test(pwd)) {
+                $("#tipMsg").html("密码长度为6-20为字母数字");
+                return false;
+            }
             $.ajax({
                 type: "post",
-                url: "${ctx.contextPath}/cust/custView/getServiceEventList",
+                url: "${ctx.contextPath}/login/loginIn",
                 data: {
-                    "userName": userName,
-                    "pwd": pwd
+                    "username": userName,
+                    "password": pwd
                 },
                 success: function (result) {
-                    if(result.data != null) {
-                        var data = result.data;
-                        var html = "";
-                        data.forEach(function(element) {
-                            html += "<option value="+element.value+">"+element.label+"</option>";
-                        });
-                        $("#secondEvent").html(html)
-                        var name = data[0].label;
-                        $("#secondEvent").parent().find(".select2-chosen").html(name);
+                    if(result === "success") {
+                        $(window).attr('location','${ctx.contextPath}/login/indexPage');
                     }
                 },
                 error: function (e) {
-                    alert("认证失败");
+                    $("#tipMsg").html("认证失败");
                 }
             });
         }
     </script>
+
 </body>
 </html>

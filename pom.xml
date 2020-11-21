@@ -126,6 +126,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.1</version>
+        </dependency>
         <!--引入thymeleaf的依赖-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->

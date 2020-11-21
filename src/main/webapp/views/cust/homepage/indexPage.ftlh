@@ -2,11 +2,11 @@
 <html>
 <head>
 <title>Azure Blog Ui Kit Flat Bootstarp Resposive Website Template| Home :: w3layouts</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="${ctx.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${ctx.contextPath}/resources/css/style1.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
-<script src="js/jquery.min.js"></script>
+<script src="${ctx.contextPath}/resources/js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,7 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="top-header">
 				<div class="navigation">
 					<div class="top-menu">
-					<span class="menu"><img src="images/menu.png" alt=""> </span>
+					<span class="menu"><img src="${ctx.contextPath}/resources/images/menu.png" alt=""> </span>
 						<ul>
 							<li><a href="#">NEWS</a></li>
 							<li><a href="#">GALLERY</a></li>
@@ -54,8 +54,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 				    </div>
 					<!-- search-scripts -->
-					<script src="js/classie.js"></script>
-					<script src="js/uisearch.js"></script>
+					<script src="${ctx.contextPath}/resources/js/classie.js"></script>
+					<script src="${ctx.contextPath}/resources/js/uisearch.js"></script>
 						<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>
@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"></div>
 			</div>
 			<div class="logo text-center">
-				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				<a href="index.html"><img src="${ctx.contextPath}/resources/images/logo.png" alt="" /></a>
 			</div>
 		</div>
 	</div>
@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a href="#"><i class="commenticon"></i></a><a href="#">12</a> <i class="date"></i>2 hours ago</p>
 					</div>
 					<div class="two">
-						<img src="images/2.jpg" alt="" />
+						<img src="${ctx.contextPath}/resources/images/2.jpg" alt="" />
 						<div class="news">
 							<p><span>news</span> <a href="#"><i class="commenticon"></i></a><a href="#">12</a> <i class="date"></i>2 hours ago</p>
 							<a class="newsmore" href="">These Are the Happiest Countries in the World</a>
@@ -132,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<!---->
-		  <script src="js/jquery.wmuSlider.js"></script> 
+		  <script src="${ctx.contextPath}/resources/js/jquery.wmuSlider.js"></script>
 			  <script>
        			$('.example1').wmuSlider({
 					 pagination :true,
@@ -144,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-3 span2">
 				<div class="three">
-					<img src="images/3.jpg" alt="" />
+					<img src="${ctx.contextPath}/resources/images/3.jpg" alt="" />
 					<div class="tech">
 						<p><span>tech</span><a href="#"> <i class="commenticon"></i></a><a href="#">12</a> <i class="date"></i>2 hours ago</p>
 						<a class="newsmore1" href="#" >Apple Watch Review: You’ll Want One, but You Don’t Need One</a>
@@ -153,15 +153,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="four text-center">
 					<h6>interview</h6>
 					<span></span>
-					<img src="images/user.jpg" alt="" />
+					<img src="${ctx.contextPath}/resources/images/user.jpg" alt="" />
 					<h4>An Interview with Photographer Joanna Kustra</h4>
 				</div>
 			</div>
 			<div class="col-md-3 span3">
 				<div class="top-news">
 					<h3>top news</h3>
-					<img src="images/ribbon.png" class="ribbon" alt="" />
-					<img src="images/4.jpg" alt="" />
+					<img src="${ctx.contextPath}/resources/images/ribbon.png" class="ribbon" alt="" />
+					<img src="${ctx.contextPath}/resources/images/4.jpg" alt="" />
 					<a href="#" class="morenews">This Is the Trader Behind Some of Deutsche Bank's Most Embarrassing Messages</a>
 					<p><a href="#"><i class="commenticon"></i></a><a href="#">12</a> <i class="date"></i>Apr 25, 2015</p>
 					<a href="#" class="morenews">If You Like the Breakfast at the National in New York, Then Try These Other Spots</a>
@@ -186,12 +186,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-6">
 				<div class="video">
-				<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span><img src="images/play-button.png" alt="" /> </span></a>
+				<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span><img src="${ctx.contextPath}/resources/images/play-button.png" alt="" /> </span></a>
 				<div id="small-dialog" class="mfp-hide">
 					<iframe width="500" height="281" src="https://www.youtube.com/embed/4u4lSmQTWgc" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 				</div>
-				<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
-				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+				<link href="${ctx.contextPath}/resources/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+				<script src="${ctx.contextPath}/resources/js/jquery.magnific-popup.js" type="text/javascript"></script>
 				<script>
 						$(document).ready(function() {
 						$('.popup-with-zoom-anim').magnificPopup({
@@ -243,9 +243,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h4>David Cameron is poised to return as U.K. prime minister after steering his Conservatives to an unexpected majority, helped by a landslide for nationalists in Scotland at Labour’s expense.
 
 					The pound jumped as projections of the final tally in the British general election indicated that the Conservatives had defied opinion polls to easily defeat Ed Miliband’s Labour Party. With most seats declared, the BBC forecast the Tories to take 331 of Parliament’s 650 seats to Labour’s 232 seats, a result that would allow Cameron to ditch his Liberal Democrat coalition partner of the past five years and govern alone.</h4>
-				<img src="images/quote1.jpg" class="text-center" alt="" />
+				<img src="${ctx.contextPath}/resources/images/quote1.jpg" class="text-center" alt="" />
 				<h3>The Sweetest <i>Victory </i>of All</h3>
-				<img src="images/quote2.jpg" alt="" />
+				<img src="${ctx.contextPath}/resources/images/quote2.jpg" alt="" />
 				<h4>Cameron hailed the election outcome as the “the sweetest victory of all” and a vindication of the Tory campaign based on his record of producing an economic recovery and cutting a record budget deficit. The result also raises the prospect of a referendum on whether Britain should remain in the European Union, while the surge in support for the Scottish National Party renews questions over the integrity of the United Kingdom just eight months after Scots voted “No” to independence.
 </h4>
 			</div>
@@ -287,7 +287,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h5>Comments</h5>
 						<div class="comment">
 							<div class="client">
-								<img src="images/c1.jpg" alt="" />
+								<img src="${ctx.contextPath}/resources/images/c1.jpg" alt="" />
 							</div>
 							<div class="client-message">
 								<p><a href="#">john doe</a><i class="date"></i>2 hours ago</p>
@@ -297,7 +297,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="comment">
 							<div class="client">
-								<img src="images/c2.jpg" alt="" />
+								<img src="${ctx.contextPath}/resources/images/c2.jpg" alt="" />
 							</div>
 							<div class="client-message">
 								<p><a href="#">Allon poe</a><i class="date"></i>6 hours ago</p>
