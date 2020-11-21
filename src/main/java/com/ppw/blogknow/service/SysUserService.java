@@ -5,6 +5,8 @@ import com.ppw.blogknow.entity.SysUser;
 import java.util.List;
 
 public interface SysUserService {
+    void loginIn(SysUser user);
+
     SysUser get(SysUser sysUser);
 
     List<SysUser> selectList(SysUser sysUser);
